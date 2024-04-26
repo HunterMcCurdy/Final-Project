@@ -1,0 +1,16 @@
+namespace aspnetcoreapp.Models
+{
+    public class students
+    {
+        public int id {get; set; }
+        public string FirstName {get; set; }
+        public string LastName {get; set; }
+        public string Major {get; set; }
+        public string year {get; set; }
+
+    }
+
+
+
+
+}

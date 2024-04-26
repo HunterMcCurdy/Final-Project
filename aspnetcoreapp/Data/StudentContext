@@ -1,0 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+
+
+
+namespace aspnetcoreapp.Data
+{
+    public class StudentContext : DbContext
+    {
+        public StudentContext(DbContextOptions<StudentContext> options) : base(options) {}
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Students>().HasData(
+                new Students { id = 1, FirstName = "Hunter", LastName = "McCurdy", Major = "Information Technology", year = "Sophomore"},
+                new Students { id = 2, FirstName = "Shane", LastName = "Frederick", Major = "Auto tech", year = "Junior"}
+            );
+        }
+
+        public DbSet<Students> Students {get; set; }
+
+
+    }
+}
